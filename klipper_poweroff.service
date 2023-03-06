@@ -1,0 +1,17 @@
+[Unit]
+Description=Simplified Python Klipper Power Off Service
+After=syslog.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/klipper-power-off-on-completion/
+ExecStart=/home/pi/klipper-power-off-on-completion/klipper_power.py
+StandardOutput=syslog
+StandardError=syslog
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
+
